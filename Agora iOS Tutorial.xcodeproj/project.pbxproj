@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		077322E71E8A68A100ABE911 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 077322E61E8A68A100ABE911 /* libresolv.tbd */; };
 		1A2655D51D3F35E700BDBA68 /* AppID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2655D41D3F35E700BDBA68 /* AppID.swift */; };
 		1ABDEE421D383BE4007DE451 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDEE411D383BE4007DE451 /* AppDelegate.swift */; };
 		1ABDEE441D383BE4007DE451 /* VideoChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDEE431D383BE4007DE451 /* VideoChatViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		077322E61E8A68A100ABE911 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		1A2655D41D3F35E700BDBA68 /* AppID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppID.swift; path = VideoChat/AppID.swift; sourceTree = "<group>"; };
 		1ABDEE3E1D383BE4007DE451 /* Agora iOS Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Agora iOS Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABDEE411D383BE4007DE451 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				077322E71E8A68A100ABE911 /* libresolv.tbd in Frameworks */,
 				1ABDEE801D383C90007DE451 /* libc++.1.dylib in Frameworks */,
 				1ABDEE7E1D383C7C007DE451 /* SystemConfiguration.framework in Frameworks */,
 				1ABDEE7C1D383C71007DE451 /* CoreMedia.framework in Frameworks */,
@@ -68,8 +71,8 @@
 		1ABDEE351D383BE4007DE451 = {
 			isa = PBXGroup;
 			children = (
-				1ABDEE811D383C96007DE451 /* Frameworks */,
 				1ABDEE401D383BE4007DE451 /* Agora iOS Tutorial */,
+				1ABDEE811D383C96007DE451 /* Frameworks */,
 				1ABDEE3F1D383BE4007DE451 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,6 +102,7 @@
 		1ABDEE811D383C96007DE451 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				077322E61E8A68A100ABE911 /* libresolv.tbd */,
 				1ABDEE7F1D383C90007DE451 /* libc++.1.dylib */,
 				1ABDEE7D1D383C7C007DE451 /* SystemConfiguration.framework */,
 				1ABDEE7B1D383C71007DE451 /* CoreMedia.framework */,

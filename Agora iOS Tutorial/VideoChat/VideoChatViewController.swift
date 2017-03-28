@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol VideoChatDelegate: NSObjectProtocol {                      // Tutorial Step 1
-    func VideoChatNeedClose(_ VideoChat: VideoChatViewController)     // Tutorial Step 6
-}
-
 class VideoChatViewController: UIViewController {
     @IBOutlet weak var localVideo: UIView!              // Tutorial Step 3
     @IBOutlet weak var remoteVideo: UIView!             // Tutorial Step 5
@@ -20,8 +16,7 @@ class VideoChatViewController: UIViewController {
     @IBOutlet weak var localVideoMutedBg: UIImageView!
     @IBOutlet weak var localVideoMutedIndicator: UIImageView!
 
-    var AgoraKit: AgoraRtcEngineKit!                    // Tutorial Step 1
-    weak var delegate: VideoChatDelegate?
+    var agoraKit: AgoraRtcEngineKit!                    // Tutorial Step 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,13 +37,13 @@ class VideoChatViewController: UIViewController {
     
     // Tutorial Step 1
     func initializeAgoraEngine() {
-        AgoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: AppID, delegate: self)
+        agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: AppID, delegate: self)
     }
 
     // Tutorial Step 2
     func setupVideo() {
-        AgoraKit.enableVideo()  // Default mode is disableVideo
-        AgoraKit.setVideoProfile(._VideoProfile_360P, swapWidthAndHeight: false) // Default video profile is 360P
+        agoraKit.enableVideo()  // Default mode is disableVideo
+        agoraKit.setVideoProfile(._VideoProfile_360P, swapWidthAndHeight: false) // Default video profile is 360P
     }
     
     // Tutorial Step 3
@@ -57,15 +52,17 @@ class VideoChatViewController: UIViewController {
         videoCanvas.uid = 0
         videoCanvas.view = localVideo
         videoCanvas.renderMode = .render_Adaptive
-        AgoraKit.setupLocalVideo(videoCanvas)
+        agoraKit.setupLocalVideo(videoCanvas)
     }
     
     // Tutorial Step 4
     func joinChannel() {
-        AgoraKit.joinChannel(byKey: nil, channelName: "demoChannel1", info:nil, uid:0) { (sid, uid, elapsed) -> Void in
+        agoraKit.joinChannel(byKey: nil, channelName: "demoChannel1", info:nil, uid:0) {[weak self] (sid, uid, elapsed) -> Void in
             // Join channel "demoChannel1"
-            self.AgoraKit.setEnableSpeakerphone(true)
-            UIApplication.shared.isIdleTimerDisabled = true
+            if let weakSelf = self {
+                weakSelf.agoraKit.setEnableSpeakerphone(true)
+                UIApplication.shared.isIdleTimerDisabled = true
+            }
         }
     }
     
@@ -75,13 +72,13 @@ class VideoChatViewController: UIViewController {
     }
     
     func leaveChannel() {
-        AgoraKit.leaveChannel(nil)
+        agoraKit.leaveChannel(nil)
         hideControlButtons()   // Tutorial Step 8
         UIApplication.shared.isIdleTimerDisabled = false
         remoteVideo.removeFromSuperview()
         localVideo.removeFromSuperview()
-        delegate?.VideoChatNeedClose(self)
-        AgoraKit = nil
+        
+        agoraKit = nil
     }
     
     // Tutorial Step 8
@@ -111,14 +108,14 @@ class VideoChatViewController: UIViewController {
     // Tutorial Step 9
     @IBAction func didClickMuteButton(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
-        AgoraKit.muteLocalAudioStream(sender.isSelected)
+        agoraKit.muteLocalAudioStream(sender.isSelected)
         resetHideButtonsTimer()
     }
     
     // Tutorial Step 10
     @IBAction func didClickVideoMuteButton(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
-        AgoraKit.muteLocalVideoStream(sender.isSelected)
+        agoraKit.muteLocalVideoStream(sender.isSelected)
         localVideo.isHidden = sender.isSelected
         localVideoMutedBg.isHidden = !sender.isSelected
         localVideoMutedIndicator.isHidden = !sender.isSelected
@@ -134,7 +131,7 @@ class VideoChatViewController: UIViewController {
     // Tutorial Step 11
     @IBAction func didClickSwitchCameraButton(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
-        AgoraKit.switchCamera()
+        agoraKit.switchCamera()
         resetHideButtonsTimer()
     }
 }
@@ -149,7 +146,7 @@ extension VideoChatViewController: AgoraRtcEngineDelegate {
         videoCanvas.uid = uid
         videoCanvas.view = remoteVideo
         videoCanvas.renderMode = .render_Adaptive
-        AgoraKit.setupRemoteVideo(videoCanvas)
+        agoraKit.setupRemoteVideo(videoCanvas)
     }
     
     // Tutorial Step 7
