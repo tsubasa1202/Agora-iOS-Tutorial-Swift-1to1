@@ -21,8 +21,7 @@
 		1ABDEE781D383C62007DE451 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABDEE771D383C62007DE451 /* AudioToolbox.framework */; };
 		1ABDEE7A1D383C66007DE451 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABDEE791D383C66007DE451 /* VideoToolbox.framework */; };
 		1ABDEE7C1D383C71007DE451 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABDEE7B1D383C71007DE451 /* CoreMedia.framework */; };
-		1ABDEE7E1D383C7C007DE451 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABDEE7D1D383C7C007DE451 /* SystemConfiguration.framework */; };
-		1ABDEE801D383C90007DE451 /* libc++.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABDEE7F1D383C90007DE451 /* libc++.1.dylib */; };
+		20BB0F231E8A828C003225FC /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BB0F221E8A828C003225FC /* libc++.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +44,7 @@
 		1ABDEE7D1D383C7C007DE451 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1ABDEE7F1D383C90007DE451 /* libc++.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.1.dylib"; path = "/usr/lib/libc++.1.dylib"; sourceTree = "<absolute>"; };
 		1ABDEE831D383CD0007DE451 /* Agora-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Agora-Bridging-Header.h"; sourceTree = "<group>"; };
+		20BB0F221E8A828C003225FC /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20BB0F231E8A828C003225FC /* libc++.tbd in Frameworks */,
 				077322E71E8A68A100ABE911 /* libresolv.tbd in Frameworks */,
-				1ABDEE801D383C90007DE451 /* libc++.1.dylib in Frameworks */,
-				1ABDEE7E1D383C7C007DE451 /* SystemConfiguration.framework in Frameworks */,
 				1ABDEE7C1D383C71007DE451 /* CoreMedia.framework in Frameworks */,
 				1ABDEE7A1D383C66007DE451 /* VideoToolbox.framework in Frameworks */,
 				1ABDEE781D383C62007DE451 /* AudioToolbox.framework in Frameworks */,
@@ -102,6 +101,7 @@
 		1ABDEE811D383C96007DE451 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				20BB0F221E8A828C003225FC /* libc++.tbd */,
 				077322E61E8A68A100ABE911 /* libresolv.tbd */,
 				1ABDEE7F1D383C90007DE451 /* libc++.1.dylib */,
 				1ABDEE7D1D383C7C007DE451 /* SystemConfiguration.framework */,
@@ -157,7 +157,9 @@
 				TargetAttributes = {
 					1ABDEE3D1D383BE4007DE451 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 48TB6ZZL5S;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -323,12 +325,14 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/libs",
+					"$(PROJECT_DIR)/Agora\\ iOS\\ Tutorial/libs",
 				);
 				INFOPLIST_FILE = "Agora iOS Tutorial/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Agora.io.Agora-iOS-Tutorial";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Agora iOS Tutorial/Agora-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
@@ -342,12 +346,14 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/libs",
+					"$(PROJECT_DIR)/Agora\\ iOS\\ Tutorial/libs",
 				);
 				INFOPLIST_FILE = "Agora iOS Tutorial/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Agora.io.Agora-iOS-Tutorial";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Agora iOS Tutorial/Agora-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
