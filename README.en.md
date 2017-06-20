@@ -13,7 +13,7 @@ With this sample app, you can:
 
 This demo is written in **Swift**, you can find **Objective-C** version here: [Agora-iOS-Tutorial-Objective-C-1to1](https://github.com/AgoraIO/Agora-iOS-Tutorial-Objective-C-1to1)
 
-A full-fledged demo can find here: [OpenVideoCall-iOS](https://github.com/AgoraIO/OpenVideoCall-iOS)
+A full-fledged demo can be found here: [OpenVideoCall-iOS](https://github.com/AgoraIO/OpenVideoCall-iOS)
 
 Agora Video SDK supports iOS / Android / Windows / macOS etc. You can find demos of these platform here:
 
