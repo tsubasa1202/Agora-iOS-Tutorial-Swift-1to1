@@ -7,7 +7,7 @@ The Agora iOS Tutorial for Swift 1to1 Sample App is an open-source demo that wil
 With this sample app, you can:
 
 - Join / leave channel
-- Mute / Unmute audio
+- Mute / unmute audio
 - Enable / disable video
 - Switch camera
 

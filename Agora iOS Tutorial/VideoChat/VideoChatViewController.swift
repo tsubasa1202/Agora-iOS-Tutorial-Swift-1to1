@@ -85,8 +85,8 @@ class VideoChatViewController: UIViewController {
     func setupButtons() {
         perform(#selector(hideControlButtons), with:nil, afterDelay:3)
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(VideoChatViewController.ViewTapped))
-        remoteVideo.addGestureRecognizer(tapGestureRecognizer)
-        remoteVideo.isUserInteractionEnabled = true
+        view.addGestureRecognizer(tapGestureRecognizer)
+        view.isUserInteractionEnabled = true
     }
 
     func hideControlButtons() {
