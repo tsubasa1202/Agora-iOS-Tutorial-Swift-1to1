@@ -138,7 +138,7 @@ class VideoChatViewController: UIViewController {
 
 extension VideoChatViewController: AgoraRtcEngineDelegate {
     // Tutorial Step 5
-    func rtcEngine(_ engine: AgoraRtcEngineKit!, firstRemoteVideoDecodedOfUid uid:UInt, size:CGSize, elapsed:Int) {
+    func rtcEngine(_ engine: AgoraRtcEngineKit, firstRemoteVideoDecodedOfUid uid:UInt, size:CGSize, elapsed:Int) {
         if (remoteVideo.isHidden) {
             remoteVideo.isHidden = false
         }
@@ -150,12 +150,12 @@ extension VideoChatViewController: AgoraRtcEngineDelegate {
     }
     
     // Tutorial Step 7
-    func rtcEngine(_ engine: AgoraRtcEngineKit!, didOfflineOfUid uid:UInt, reason:AgoraRtcUserOfflineReason) {
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didOfflineOfUid uid:UInt, reason:AgoraRtcUserOfflineReason) {
         self.remoteVideo.isHidden = true
     }
     
     // Tutorial Step 10
-    func rtcEngine(_ engine: AgoraRtcEngineKit!, didVideoMuted muted:Bool, byUid:UInt) {
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didVideoMuted muted:Bool, byUid:UInt) {
         remoteVideo.isHidden = muted
         remoteVideoMutedIndicator.isHidden = !muted
     }
