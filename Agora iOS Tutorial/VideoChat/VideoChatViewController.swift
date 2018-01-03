@@ -89,11 +89,11 @@ class VideoChatViewController: UIViewController {
         view.isUserInteractionEnabled = true
     }
 
-    func hideControlButtons() {
+    @objc func hideControlButtons() {
         controlButtons.isHidden = true
     }
     
-    func ViewTapped() {
+    @objc func ViewTapped() {
         if (controlButtons.isHidden) {
             controlButtons.isHidden = false;
             perform(#selector(hideControlButtons), with:nil, afterDelay:3)
