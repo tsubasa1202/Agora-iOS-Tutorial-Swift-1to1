@@ -78,7 +78,7 @@ class VideoChatViewController: UIViewController {
         remoteVideo.removeFromSuperview()
         localVideo.removeFromSuperview()
         
-        agoraKit = nil
+//        agoraKit = nil
     }
     
     // Tutorial Step 8
