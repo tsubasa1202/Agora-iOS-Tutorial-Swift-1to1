@@ -77,8 +77,6 @@ class VideoChatViewController: UIViewController {
         UIApplication.shared.isIdleTimerDisabled = false
         remoteVideo.removeFromSuperview()
         localVideo.removeFromSuperview()
-        
-//        agoraKit = nil
     }
     
     // Tutorial Step 8
