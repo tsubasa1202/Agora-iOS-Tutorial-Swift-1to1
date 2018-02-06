@@ -81,7 +81,7 @@ class VideoChatViewController: UIViewController {
     
     // Tutorial Step 8
     func setupButtons() {
-        perform(#selector(hideControlButtons), with:nil, afterDelay:10)
+        perform(#selector(hideControlButtons), with:nil, afterDelay:8)
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(VideoChatViewController.ViewTapped))
         view.addGestureRecognizer(tapGestureRecognizer)
         view.isUserInteractionEnabled = true
@@ -94,13 +94,13 @@ class VideoChatViewController: UIViewController {
     @objc func ViewTapped() {
         if (controlButtons.isHidden) {
             controlButtons.isHidden = false;
-            perform(#selector(hideControlButtons), with:nil, afterDelay:3)
+            perform(#selector(hideControlButtons), with:nil, afterDelay:8)
         }
     }
     
     func resetHideButtonsTimer() {
         VideoChatViewController.cancelPreviousPerformRequests(withTarget: self)
-        perform(#selector(hideControlButtons), with:nil, afterDelay:3)
+        perform(#selector(hideControlButtons), with:nil, afterDelay:8)
     }
     
     // Tutorial Step 9
