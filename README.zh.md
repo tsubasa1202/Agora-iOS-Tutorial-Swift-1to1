@@ -28,7 +28,7 @@ Agora视频SDK支持 iOS / Android / Windows / macOS 等多个平台，你可以
 let AppID: String = "Your App ID"
 ```
 
-然后在 [Agora.io SDK](https://www.agora.io/cn/blog/download/) 下载 **视频通话 + 直播 SDK**，解压后将其中的 **libs** 文件夹复制到本项目目录下，和 “Agora iOS Tutorial” 文件夹平级。
+然后在 [Agora.io SDK](https://www.agora.io/cn/download/) 下载 **视频通话 + 直播 SDK**，解压后将其中的 **libs** 文件夹复制到本项目目录下，和 “Agora iOS Tutorial” 文件夹平级。
 
 最后使用 XCode 打开 Agora iOS Tutorial.xcodeproj，连接 iPhone／iPad 测试设备，设置有效的开发者签名后即可运行。
 
@@ -43,7 +43,7 @@ let AppID: String = "Your App ID"
 - 如果在集成中遇到问题, 你可以到 [开发者社区](https://dev.agora.io/cn/) 提问
 - 如果有售前咨询问题, 可以拨打 400 632 6626，或加入官方Q群 12742516 提问
 - 如果需要售后技术支持, 你可以在 [Agora Dashboard](https://dashboard.agora.io) 提交工单
-- 如果发现了示例代码的bug, 欢迎提交 [issue](https://github.com/AgoraIO/Agora-iOS-Tutorial-Swift-1to1/issues)
+- 如果发现了示例代码的 bug, 欢迎提交 [issue](https://github.com/AgoraIO/Agora-iOS-Tutorial-Swift-1to1/issues)
 
 ## 代码许可
 
