@@ -23,9 +23,11 @@
 		1ABDEE7A1D383C66007DE451 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABDEE791D383C66007DE451 /* VideoToolbox.framework */; };
 		1ABDEE7C1D383C71007DE451 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABDEE7B1D383C71007DE451 /* CoreMedia.framework */; };
 		20BB0F231E8A828C003225FC /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BB0F221E8A828C003225FC /* libc++.tbd */; };
+		319EBD1F6F4C0B321F845479 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02150D9018B109EC69CE3FC7 /* Accelerate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02150D9018B109EC69CE3FC7 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = ../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = "<group>"; };
 		077322E61E8A68A100ABE911 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		1A2655D41D3F35E700BDBA68 /* AppID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppID.swift; path = VideoChat/AppID.swift; sourceTree = "<group>"; };
 		1ABDEE3E1D383BE4007DE451 /* Agora iOS Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Agora iOS Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +64,7 @@
 				1ABDEE741D383C34007DE451 /* CoreMotion.framework in Frameworks */,
 				1ABDEE721D383C2C007DE451 /* AVFoundation.framework in Frameworks */,
 				1ABDEE701D383C26007DE451 /* AgoraRtcEngineKit.framework in Frameworks */,
+				319EBD1F6F4C0B321F845479 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +115,7 @@
 				1ABDEE731D383C34007DE451 /* CoreMotion.framework */,
 				1ABDEE711D383C2C007DE451 /* AVFoundation.framework */,
 				1ABDEE6F1D383C26007DE451 /* AgoraRtcEngineKit.framework */,
+				02150D9018B109EC69CE3FC7 /* Accelerate.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
