@@ -43,7 +43,10 @@ class VideoChatViewController: UIViewController {
     // Tutorial Step 2
     func setupVideo() {
         agoraKit.enableVideo()  // Default mode is disableVideo
-        agoraKit.setVideoProfile(.landscape360P, swapWidthAndHeight: false) // Default video profile is 360P
+        agoraKit.setVideoEncoderConfiguration(AgoraVideoEncoderConfiguration(size: AgoraVideoDimension640x360,
+                                                                             frameRate: .fps15,
+                                                                             bitrate: AgoraVideoBitrateStandard,
+                                                                             orientationMode: .adaptative))
     }
     
     // Tutorial Step 3
@@ -51,7 +54,7 @@ class VideoChatViewController: UIViewController {
         let videoCanvas = AgoraRtcVideoCanvas()
         videoCanvas.uid = 0
         videoCanvas.view = localVideo
-        videoCanvas.renderMode = .adaptive
+        videoCanvas.renderMode = .hidden
         agoraKit.setupLocalVideo(videoCanvas)
     }
     
