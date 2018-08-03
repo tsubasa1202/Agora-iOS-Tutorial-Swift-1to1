@@ -61,10 +61,10 @@ class VideoChatViewController: UIViewController {
     
     // Tutorial Step 4
     func joinChannel() {
+        agoraKit.setDefaultAudioRouteToSpeakerphone(true)
         agoraKit.joinChannel(byToken: nil, channelId: "demoChannel1", info:nil, uid:0) {[weak self] (sid, uid, elapsed) -> Void in
             // Join channel "demoChannel1"
             if let weakSelf = self {
-                weakSelf.agoraKit.setEnableSpeakerphone(true)
                 UIApplication.shared.isIdleTimerDisabled = true
             }
         }
