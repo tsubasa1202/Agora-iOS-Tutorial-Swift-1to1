@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AgoraRtcEngineKit
 
 class VideoChatViewController: UIViewController {
     @IBOutlet weak var localVideo: UIView!              // Tutorial Step 3
