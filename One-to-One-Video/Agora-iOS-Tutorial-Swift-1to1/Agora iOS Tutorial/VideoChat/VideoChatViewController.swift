@@ -38,6 +38,10 @@ class VideoChatViewController: UIViewController {
     
     func initializeAgoraEngine() {
         agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: AppID, delegate: self)
+        agoraKit.setChannelProfile(.liveBroadcasting)
+        agoraKit.setClientRole(.broadcaster)
+        agoraKit.enableWebSdkInteroperability(true)
+    
     }
 
     func setupVideo() {
@@ -58,11 +62,24 @@ class VideoChatViewController: UIViewController {
     
     func joinChannel() {
         agoraKit.setDefaultAudioRouteToSpeakerphone(true)
+        /*
         agoraKit.joinChannel(byToken: nil, channelId: "demoChannel2", info:nil, uid:0) {(sid, uid, elapsed) -> Void in
             // Did join channel "demoChannel1"
         }
+         */
         
-        UIApplication.shared.isIdleTimerDisabled = true
+        let code = agoraKit.joinChannel(byToken: nil, channelId: "demoChannel2", info: nil, uid: 0, joinSuccess: nil)
+        
+        print("code: \(code)")
+        if code == 0 {
+            UIApplication.shared.isIdleTimerDisabled = true
+        } else {
+            DispatchQueue.main.async(execute: {
+                // self.alert(string: "Join channel failed: \(code)")
+                print("Join channel failed: \(code)")
+            })
+        }
+        
     }
     
     @IBAction func didClickHangUpButton(_ sender: UIButton) {

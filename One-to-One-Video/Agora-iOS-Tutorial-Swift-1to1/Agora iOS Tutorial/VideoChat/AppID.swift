@@ -6,4 +6,5 @@
 //  Copyright © 2016 Agora.io. All rights reserved.
 //
 
-let AppID: String = "f5e50500ef5f47fab9f959f6c921e939"
+let AppID: String = "7283600d39c043038867f64dd8a04d72"
+
