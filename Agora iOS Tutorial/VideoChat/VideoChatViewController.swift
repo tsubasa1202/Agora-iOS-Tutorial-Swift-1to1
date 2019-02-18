@@ -39,6 +39,10 @@ class VideoChatViewController: UIViewController {
     // Tutorial Step 1
     func initializeAgoraEngine() {
         agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: AppID, delegate: self)
+        agoraKit.setChannelProfile(.liveBroadcasting)
+        agoraKit.setClientRole(.broadcaster)
+        agoraKit.enableWebSdkInteroperability(true)
+        agoraKit.enableDualStreamMode(true)
     }
 
     // Tutorial Step 2
@@ -146,6 +150,7 @@ extension VideoChatViewController: AgoraRtcEngineDelegate {
         }
         let videoCanvas = AgoraRtcVideoCanvas()
         videoCanvas.uid = uid
+        agoraKit.setRemoteVideoStream(uid, type: .low)
         videoCanvas.view = remoteVideo
         videoCanvas.renderMode = .adaptive
         agoraKit.setupRemoteVideo(videoCanvas)
