@@ -6,5 +6,4 @@
 //  Copyright © 2016 Agora.io. All rights reserved.
 //
 
-let AppID: String = "7283600d39c043038867f64dd8a04d72"
-
+let AppID: String = <#Your App ID#>

@@ -38,10 +38,12 @@ class VideoChatViewController: UIViewController {
     
     func initializeAgoraEngine() {
         agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: AppID, delegate: self)
+    
         agoraKit.setChannelProfile(.liveBroadcasting)
         agoraKit.setClientRole(.broadcaster)
         agoraKit.enableWebSdkInteroperability(true)
-    
+        agoraKit.enableDualStreamMode(true)
+
     }
 
     func setupVideo() {
@@ -152,12 +154,26 @@ extension VideoChatViewController: AgoraRtcEngineDelegate {
         }
         let videoCanvas = AgoraRtcVideoCanvas()
         videoCanvas.uid = uid
+        agoraKit.setRemoteVideoStream(uid, type: .low)
         videoCanvas.view = remoteVideo
         videoCanvas.renderMode = .hidden
         agoraKit.setupRemoteVideo(videoCanvas)
     }
     
+    func rtcEngineConnectionDidInterrupted(_ engine: AgoraRtcEngineKit) {
+        print("Connection Interrupted")
+    }
+    
+    func rtcEngineConnectionDidLost(_ engine: AgoraRtcEngineKit) {
+        print("Connection Lost")
+    }
+    
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didOccurError errorCode: AgoraErrorCode) {
+        print("Other error errorCode: \(errorCode.rawValue)")
+    }
+    
     internal func rtcEngine(_ engine: AgoraRtcEngineKit, didOfflineOfUid uid:UInt, reason:AgoraUserOfflineReason) {
+        print("didOfflineOfUid: \(uid), reason: \(reason.rawValue)")
         self.remoteVideo.isHidden = true
     }
     
